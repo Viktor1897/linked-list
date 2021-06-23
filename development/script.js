@@ -37,6 +37,18 @@ class LinkedList {
     }
 
   }
+
+  toArray() {
+    let current = this.head;
+    const output = [];
+
+    while(current) {
+      output.push(current);
+      current = current.next;
+    }
+    
+    return output;
+  }
 }
 
 const list = new LinkedList();
