@@ -38,6 +38,29 @@ class LinkedList {
 
   }
 
+  remove(data) {
+    if (!this.head) {
+      return
+    }
+
+    while (this.head && this.head.data === data) {
+      this.head = this.head.next
+    }
+
+    let current = this.head
+    while (current.next) {
+      if (current.next.data === data) {
+        current.next = current.next.next
+      } else {
+        current = current.next
+      }
+    }
+
+    if (this.tail.data === data) {
+      this.tail = current
+    }
+  }
+
   toArray() {
     let current = this.head;
     const output = [];
