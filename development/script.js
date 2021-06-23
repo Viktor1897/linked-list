@@ -1,0 +1,30 @@
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor () {
+    this.head = null;
+    this.tail = null;
+  }
+
+  append(data) {
+    const node = new Node(data);
+
+    if (this.tail) {
+      this.tail = this.tail.next = node;
+    } else {
+      this.tail = node;
+    }
+
+    if (!this.head) {
+      this.head = node;
+    }
+    
+  }
+}
+
+const list = new LinkedList();
