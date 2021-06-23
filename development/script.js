@@ -25,6 +25,18 @@ class LinkedList {
     }
     
   }
+
+  prepend(data) {
+    const node = new Node(data);
+
+    if (!this.head) {
+      this.append(data);
+    } else {
+      node.next = this.head;
+      this.head = node;
+    }
+
+  }
 }
 
 const list = new LinkedList();
